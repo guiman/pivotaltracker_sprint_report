@@ -11,3 +11,5 @@ Pivotal Tracker is a great product and I've enjoyed it both at work and on my pe
 We uses a small sinatra application to capture the minimum data required to generate the most basic sprint review document and present it.
 
 I welcom everyone to fork the project an personalize it as you see fit.
+
+If you want to try first, please visit a [live demo here](https://peaceful-tundra-2232.herokuapp.com/)
