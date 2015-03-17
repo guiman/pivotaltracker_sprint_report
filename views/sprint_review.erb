@@ -1,0 +1,49 @@
+<h1>End of sprint report</h1>
+<h2>Summary</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Sprint</th>
+      <td><%= @sprint_review.name %></td>
+    </tr>
+    <tr>
+      <th>Sprint Dates</th>
+      <td><%= "#{@sprint_review.from} - #{@sprint_review.to}" %></td>
+    </tr>
+    <tr>
+      <th>Sprint points</th>
+      <td>
+        <table>
+          <tr><td><%= "#{@sprint_review.points_completed} points completed" %></td></tr>
+          <tr><td><%= "#{@sprint_review.chore_and_bugs.count} chores/bugs completed" %></td></tr>
+          <tr><td><%= "#{@sprint_review.in_progress.count} stories in progress" %></td></tr>
+          <tr><td><%= "#{@sprint_review.icebox.count} stories in Icebox/Backlog" %></td></tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Points
+      <th>Current State</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sprint_review.all_stories.each do |story| %>
+      <tr>
+        <td><%= story["name"] %></td>
+        <td><%= story["story_type"] %></td>
+        <td><%= story["estimate"] %></td>
+        <td><%= story["current_state"] %></td>
+        <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true) %>
+        <td><%= markdown.render(story.fetch("description", "No description")) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
