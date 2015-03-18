@@ -7,7 +7,7 @@ module Test
 
       protected
 
-      def fetch_project_api(endpoint: nil, params: "")
+      def call_api(endpoint: nil, params: "")
         cassette_name = endpoint.nil? ?  "project" : "#{endpoint}-#{params}"
         VCR.use_cassette(cassette_name) { super }
       end

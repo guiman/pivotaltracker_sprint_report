@@ -1,67 +1,39 @@
+require 'pivotal_extension/uri_builder'
 require 'open-uri'
 require 'json'
 
 module Pivotal
   class Operations
+
+    AVAILABLE_ENDPOINTS=[:stories, :iterations]
+    PRIMARY_ENDPOINT="/projects/:project_id"
+
     def initialize(configuration: raise)
       @configuration = configuration
     end
 
-    def stories(filter = {})
-      fetch_project_api(endpoint: "stories", params: { limit: 500 }.merge(filter))
-    end
-
-    def iterations(filter = {})
-      fetch_project_api(endpoint: "iterations", params: filter)
-    end
-
     def project
-      fetch_project_api
+      call_api
     end
 
     def project_name
       project['name']
     end
 
-    protected
-
-    def build_string_filter(params)
-      return params if params.instance_of? String
-      unless params.instance_of? Hash
-        raise "Can't create filter from: #{params.class.to_s}"
+    def method_missing(name, *args, &block)
+      if AVAILABLE_ENDPOINTS.include?(name)
+        call_api(endpoint: name.to_s, params: args.first)
+      else
+        super
       end
-
-      result = []
-
-      result << "limit=#{params.fetch(:limit)}" if params[:limit]
-      result << "offset=#{params.fetch(:offset)}" if params[:offset]
-
-      if params[:fields]
-        result << "fields=" + (params.fetch(:fields, []).join('%2C'))
-      end
-
-      if params[:conditions]
-        params.fetch(:conditions, []).each do |field, values|
-          result << "#{field.to_s}=#{values.join(',')}"
-        end
-      end
-
-      if params[:filters]
-        result << "filter=" + params.fetch(:filters, {}).map do |filter, values|
-          "#{filter}:#{values.join(',')}"
-        end.join(' ')
-      end
-
-      result.join("&")
     end
 
-    def fetch_project_api(endpoint: nil, params: {})
-      string_params = build_string_filter(params)
-      uri_string = "https://www.pivotaltracker.com/services/v5/projects/#{@configuration.project}"
-      uri_string.concat "/#{endpoint}" if endpoint
-      uri_string.concat "?#{string_params}" if endpoint && string_params
+    protected
 
-      uri = URI.parse(uri_string)
+    def call_api(primary_endpoint: PRIMARY_ENDPOINT, endpoint: nil, params: {})
+      uri_builder = UriBuilder.new(primary_endpoint, endpoint, params, { project_id: @configuration.project })
+
+      uri = URI.parse(uri_builder.to_s)
 
       uri.open('X-TrackerToken' => @configuration.token) do |f|
         JSON.parse(f.read)

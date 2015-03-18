@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.pivotaltracker.com/services/v5/projects/367813/stories?fields=story_type,current_state&with_state=accepted
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Trackertoken:
+      - ''
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Tracker-Project-Version:
+      - '79039'
+      X-Tracker-Pagination-Total:
+      - '3036'
+      X-Tracker-Pagination-Offset:
+      - '0'
+      X-Tracker-Pagination-Limit:
+      - '100'
+      X-Tracker-Pagination-Returned:
+      - '100'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3b5ed04e37f1e805a5c0f73f6d5f3f25
+      X-Runtime:
+      - '0.192274'
+      Date:
+      - Wed, 18 Mar 2015 07:34:03 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.41
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is
+      X-Tracker-Client-Pinger-Interval:
+      - '12'
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":18524765,"story_type":"feature","current_state":"accepted"},{"id":18660637,"story_type":"feature","current_state":"accepted"},{"id":18524791,"story_type":"feature","current_state":"accepted"},{"id":18524835,"story_type":"feature","current_state":"accepted"},{"id":18524815,"story_type":"feature","current_state":"accepted"},{"id":18830079,"story_type":"feature","current_state":"accepted"},{"id":18524725,"story_type":"feature","current_state":"accepted"},{"id":18830203,"story_type":"feature","current_state":"accepted"},{"id":18830333,"story_type":"feature","current_state":"accepted"},{"id":18524971,"story_type":"feature","current_state":"accepted"},{"id":18830439,"story_type":"feature","current_state":"accepted"},{"id":18898503,"story_type":"bug","current_state":"accepted"},{"id":18708603,"story_type":"feature","current_state":"accepted"},{"id":18940833,"story_type":"bug","current_state":"accepted"},{"id":18963979,"story_type":"bug","current_state":"accepted"},{"id":18524875,"story_type":"feature","current_state":"accepted"},{"id":18524889,"story_type":"feature","current_state":"accepted"},{"id":18524881,"story_type":"feature","current_state":"accepted"},{"id":18524907,"story_type":"feature","current_state":"accepted"},{"id":18970473,"story_type":"bug","current_state":"accepted"},{"id":19016353,"story_type":"bug","current_state":"accepted"},{"id":19015975,"story_type":"feature","current_state":"accepted"},{"id":19016235,"story_type":"feature","current_state":"accepted"},{"id":19016031,"story_type":"feature","current_state":"accepted"},{"id":19170821,"story_type":"chore","current_state":"accepted"},{"id":19166505,"story_type":"feature","current_state":"accepted"},{"id":19090097,"story_type":"bug","current_state":"accepted"},{"id":19166791,"story_type":"feature","current_state":"accepted"},{"id":19173949,"story_type":"bug","current_state":"accepted"},{"id":19167703,"story_type":"feature","current_state":"accepted"},{"id":19167589,"story_type":"feature","current_state":"accepted"},{"id":19167669,"story_type":"feature","current_state":"accepted"},{"id":19276207,"story_type":"bug","current_state":"accepted"},{"id":19167767,"story_type":"feature","current_state":"accepted"},{"id":19176337,"story_type":"feature","current_state":"accepted"},{"id":19339881,"story_type":"feature","current_state":"accepted"},{"id":19339237,"story_type":"bug","current_state":"accepted"},{"id":19379727,"story_type":"bug","current_state":"accepted"},{"id":19167813,"story_type":"feature","current_state":"accepted"},{"id":19391605,"story_type":"feature","current_state":"accepted"},{"id":19391559,"story_type":"feature","current_state":"accepted"},{"id":19582781,"story_type":"feature","current_state":"accepted"},{"id":19577783,"story_type":"bug","current_state":"accepted"},{"id":19583419,"story_type":"bug","current_state":"accepted"},{"id":19583197,"story_type":"feature","current_state":"accepted"},{"id":19573995,"story_type":"bug","current_state":"accepted"},{"id":19608723,"story_type":"feature","current_state":"accepted"},{"id":19583057,"story_type":"feature","current_state":"accepted"},{"id":19391663,"story_type":"feature","current_state":"accepted"},{"id":19583227,"story_type":"feature","current_state":"accepted"},{"id":19636649,"story_type":"bug","current_state":"accepted"},{"id":19610591,"story_type":"bug","current_state":"accepted"},{"id":19391705,"story_type":"feature","current_state":"accepted"},{"id":19168089,"story_type":"feature","current_state":"accepted"},{"id":19686621,"story_type":"bug","current_state":"accepted"},{"id":19167873,"story_type":"feature","current_state":"accepted"},{"id":19763879,"story_type":"feature","current_state":"accepted"},{"id":19850643,"story_type":"feature","current_state":"accepted"},{"id":19763897,"story_type":"feature","current_state":"accepted"},{"id":19763919,"story_type":"feature","current_state":"accepted"},{"id":19763979,"story_type":"feature","current_state":"accepted"},{"id":19763997,"story_type":"feature","current_state":"accepted"},{"id":19764031,"story_type":"feature","current_state":"accepted"},{"id":19936203,"story_type":"bug","current_state":"accepted"},{"id":19609037,"story_type":"feature","current_state":"accepted"},{"id":19764117,"story_type":"feature","current_state":"accepted"},{"id":20060765,"story_type":"chore","current_state":"accepted"},{"id":19763887,"story_type":"feature","current_state":"accepted"},{"id":19764013,"story_type":"feature","current_state":"accepted"},{"id":19764049,"story_type":"feature","current_state":"accepted"},{"id":20128043,"story_type":"bug","current_state":"accepted"},{"id":20178531,"story_type":"bug","current_state":"accepted"},{"id":20180299,"story_type":"bug","current_state":"accepted"},{"id":19764097,"story_type":"feature","current_state":"accepted"},{"id":19763951,"story_type":"feature","current_state":"accepted"},{"id":20233795,"story_type":"bug","current_state":"accepted"},{"id":19764067,"story_type":"feature","current_state":"accepted"},{"id":20240417,"story_type":"bug","current_state":"accepted"},{"id":19702493,"story_type":"feature","current_state":"accepted"},{"id":20205535,"story_type":"bug","current_state":"accepted"},{"id":20241205,"story_type":"feature","current_state":"accepted"},{"id":20188001,"story_type":"bug","current_state":"accepted"},{"id":19949489,"story_type":"feature","current_state":"accepted"},{"id":20253131,"story_type":"bug","current_state":"accepted"},{"id":20286291,"story_type":"feature","current_state":"accepted"},{"id":20285751,"story_type":"feature","current_state":"accepted"},{"id":20287899,"story_type":"feature","current_state":"accepted"},{"id":20233823,"story_type":"feature","current_state":"accepted"},{"id":20244743,"story_type":"feature","current_state":"accepted"},{"id":20288169,"story_type":"feature","current_state":"accepted"},{"id":20356013,"story_type":"bug","current_state":"accepted"},{"id":20374205,"story_type":"bug","current_state":"accepted"},{"id":20286521,"story_type":"bug","current_state":"accepted"},{"id":20070865,"story_type":"feature","current_state":"accepted"},{"id":20394953,"story_type":"bug","current_state":"accepted"},{"id":19589381,"story_type":"feature","current_state":"accepted"},{"id":20359441,"story_type":"feature","current_state":"accepted"},{"id":19608941,"story_type":"feature","current_state":"accepted"},{"id":20059667,"story_type":"feature","current_state":"accepted"},{"id":19583339,"story_type":"feature","current_state":"accepted"}]'
+    http_version: 
+  recorded_at: Wed, 18 Mar 2015 07:34:03 GMT
+recorded_with: VCR 2.9.3
